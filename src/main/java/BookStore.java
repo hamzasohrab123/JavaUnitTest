@@ -71,8 +71,6 @@ public class BookStore {
                     flag = false;
                 }
                 catch (ArrayIndexOutOfBoundsException arrayerror) {
-                }
-                catch (ArrayIndexOutOfBoundsException arrayerror) {
                     System.out.println("Sorry, There is an Error in 2nd Try Block");
                     System.out.println(arrayerror);
                 }
@@ -80,7 +78,6 @@ public class BookStore {
             catch (ArrayIndexOutOfBoundsException arrayerror) {
                 System.out.println("Sorry, There is an Error in 1st Try Block");
             }
-            System.out.println("Try-Catch Blocks Ended");
             finally{
                 System.out.println("Try-Catch Blocks Ended");
             }
