@@ -2,7 +2,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import java.io.FileWriter;
 import java.io.IOException;
-/*
+
 public class WriteToJson {
 
     public static void main(String[] args) {
@@ -39,8 +39,8 @@ public class WriteToJson {
     }
 
 }
-*/
 
+/*
 public class WriteToJson{
 
     public static void main(String[] args) {
@@ -72,8 +72,7 @@ public class WriteToJson{
     }
 
 }
-
-
+*/
 
 
 
