@@ -37,25 +37,34 @@ import org.json.simple.parser.ParseException;
         }
 
 /*
+
+//This is new code which is printing values too and has option to either print keys or values
 public class ReadFromJson {
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
-        JSONParser parser = new JSONParser();
+            JSONParser parser = new JSONParser();
 
-        try (FileReader read = new FileReader("Phones.json")){
-            Object obj = parser.parse(read);
+            try (FileReader read = new FileReader("test3.json")){
+                Object obj = parser.parse(read);
 
-            JSONObject object = (JSONObject) obj;
-            System.out.println(object);
+                JSONObject jsonobject = (JSONObject) obj;
+                String email = jsonobject.get("Email").toString();
+                System.out.println(email);
 
-        }
-        catch (Exception e){
-            System.out.println(e);
+                Set<Object> keySet = jsonobject.keySet();
+                for(Object ks : keySet){
+                    String k = (String)ks;
+                    Object kv = jsonobject.get(k);
+                    System.out.println(k + kv);
+                }
+            }
+            catch (Exception e){
+                System.out.println(e);
+            }
         }
     }
 
-}
 */
 
 
