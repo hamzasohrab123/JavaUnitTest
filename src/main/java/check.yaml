@@ -1,0 +1,12 @@
+companyname: Space Tech
+established: 2000
+employees:
+  emp1: Mark
+  emp2: John
+  emp3: David
+  emp4: Steven
+roles:
+  - Tech Lead
+  - Developer
+  - Tester
+  - Analyst

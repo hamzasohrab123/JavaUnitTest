@@ -3,12 +3,12 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.specification.RequestSpecification;
 import okhttp3.*;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Base64;
-
 import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.requestSpecification;
 
     public class AccessToken {
         public static void main(String[] args) throws IOException {
@@ -72,19 +72,36 @@ import static io.restassured.RestAssured.given;
             String url = "https://5x9m5ed0tj.execute-api.us-east-1.amazonaws.com/test/submit";
             String path = new String(Files.readAllBytes(Paths.get("submit.json")));
 
-            RequestSpecification rs = given().body(path);
-            rs.contentType(ContentType.JSON);
-            rs.header("Authorization", getToken());
-            io.restassured.response.Response response = rs.post(url);
+            RequestSpecification requestSpecification = given().body(path);
+            requestSpecification.contentType(ContentType.JSON);
+            requestSpecification.header("Authorization", getToken());
+            io.restassured.response.Response response = requestSpecification.post(url);
 
-            String rb = response.asString();
-            System.out.println(rb);
+            String responseBody = response.asString();
+            System.out.println(responseBody);
 
-            JsonPath jp = new JsonPath(rb);
-            String mess = jp.get("message");
+            JsonPath jsonPath = new JsonPath(responseBody);
+            String mess = jsonPath.get("message");
             System.out.println(mess);
-
 
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
