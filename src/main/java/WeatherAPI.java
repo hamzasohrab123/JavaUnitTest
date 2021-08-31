@@ -17,9 +17,9 @@ public class WeatherAPI {
 
             OkHttpClient client = new OkHttpClient.Builder().build();
 
-//            MediaType mediaType = MediaType.parse("application/json");
-//
-//            RequestBody Body = RequestBody.create(mediaType, "access_key=3bec97ab5239d23224bf6804fa5c2a47&query=New York");
+//          MediaType mediaType = MediaType.parse("application/json");
+
+//          RequestBody Body = RequestBody.create(mediaType, "access_key=3bec97ab5239d23224bf6804fa5c2a47&query=New York");
 
             Request request = new Request.Builder()
                     .url(url)
@@ -29,8 +29,8 @@ public class WeatherAPI {
             Response response = client.newCall(request).execute();
 
             String responseBody = response.body().string();
-
             System.out.println(responseBody);
+
         }
         catch (Exception error){
             System.out.println(error);

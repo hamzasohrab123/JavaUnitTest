@@ -1,3 +1,4 @@
+/*
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -50,8 +51,8 @@ public class ConnectDB {
 
     }
 }
+*/
 
-/*
 import java.sql.*;
 
 public class ConnectDB {
@@ -73,8 +74,7 @@ public class ConnectDB {
              ResultSet rs = stmt.executeQuery(SQL)) {
             // display actor information
             displayActor(rs);
-        }
-        catch (SQLException ex) {
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
     }
@@ -88,8 +88,7 @@ public class ConnectDB {
              ResultSet rs = stmt.executeQuery(SQL)) {
             rs.next();
             count = rs.getInt(1);
-        }
-        catch (SQLException ex) {
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
 
@@ -116,8 +115,7 @@ public class ConnectDB {
             pstmt.setInt(1, actorID);
             ResultSet rs = pstmt.executeQuery();
             displayActor(rs);
-        }
-        catch (SQLException ex) {
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
     }
@@ -128,11 +126,8 @@ public class ConnectDB {
 //        connect.getActorCount();
         connect.getActors();
     }
+
 }
-
-*/
-
-
 
 
 

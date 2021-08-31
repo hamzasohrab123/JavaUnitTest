@@ -52,15 +52,16 @@ import static io.restassured.RestAssured.requestSpecification;
             Response response = client.newCall(request).execute();
             System.out.println(response);
 
-            //Convert responseBody as String
+            //Convert responseBody as String in JsonBody
             String responseBody = response.body().string();
             System.out.println(responseBody);
 
             //Convert String jsonBody to JsonPath object
             JsonPath jsonPath = new JsonPath(responseBody);
 
-            //Gets access-token in json file
+            //This will print the token in simple format
             token = jsonPath.get("access_token");
+//            System.out.println(token);
 
             client.connectionPool().evictAll();
             return token;
@@ -77,12 +78,16 @@ import static io.restassured.RestAssured.requestSpecification;
             requestSpecification.header("Authorization", getToken());
             io.restassured.response.Response response = requestSpecification.post(url);
 
+            //Convert responseBody as String in JsonBody
             String responseBody = response.asString();
             System.out.println(responseBody);
 
+            //Convert String jsonBody to JsonPath object
             JsonPath jsonPath = new JsonPath(responseBody);
+
+            //This will print the token in simple format
             String mess = jsonPath.get("message");
-            System.out.println(mess);
+//            System.out.println(mess);
 
         }
     }

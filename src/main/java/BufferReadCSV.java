@@ -26,12 +26,12 @@ public class BufferReadCSV {
                 System.out.println("\n");
 
             }
-            System.out.println("\n");
         }
         catch (Exception error){
             System.out.println(error);
         }
     }
 }
+
 
 
